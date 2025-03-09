@@ -1,6 +1,3 @@
-// Variables globales
-let currentNick = "";
-
 // Elementos del DOM
 const nickModal = document.getElementById("nick-modal");
 const nickInput = document.getElementById("nick-input");
@@ -16,10 +13,20 @@ const submitRating = document.getElementById("submit-rating");
 const voteStats = document.getElementById("vote-stats");
 const seeMoreBtn = document.getElementById("see-more-btn");
 const allRatings = document.getElementById("all-ratings");
+const userNickDisplay = document.getElementById("user-nick-display");
 
-// Mostrar modal de nick al cargar la página
+// Variable global para el nick del usuario
+let currentNick = localStorage.getItem("userNick") || "";
+
+// Mostrar modal de nick si no hay un nick guardado
 window.onload = () => {
-    nickModal.style.display = "flex";
+    if (!currentNick) {
+        nickModal.style.display = "flex";
+    } else {
+        userNickDisplay.textContent = `Bienvenido, ${currentNick}!`;
+    }
+    updateVoteStats();
+    updateAllRatings();
 };
 
 // Guardar nick y cerrar modal
@@ -30,6 +37,8 @@ submitNick.addEventListener("click", () => {
         return;
     }
     currentNick = nick;
+    localStorage.setItem("userNick", currentNick); // Guardar el nick en localStorage
+    userNickDisplay.textContent = `Bienvenido, ${currentNick}!`;
     nickModal.style.display = "none";
 });
 
@@ -171,7 +180,3 @@ function resetRating() {
     stars.forEach((star) => star.classList.remove("active"));
     commentInput.value = "";
 }
-
-// Inicializar la página
-updateVoteStats();
-updateAllRatings();
