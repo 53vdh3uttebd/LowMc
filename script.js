@@ -39,6 +39,15 @@ openRatingModal.addEventListener("click", () => {
         alert("Por favor, ingresa tu nick de Minecraft primero.");
         return;
     }
+
+    // Verificar si el usuario ya votó hoy
+    const lastVoteDate = localStorage.getItem(`lastVoteDate_${currentNick}`);
+    const today = new Date().toLocaleDateString();
+    if (lastVoteDate === today) {
+        alert("Ya has valorado hoy. ¡Vuelve mañana!");
+        return;
+    }
+
     ratingModal.style.display = "flex"; // Mostrar el modal
 });
 
@@ -96,6 +105,9 @@ submitRating.addEventListener("click", () => {
     updateAllRatings(); // Actualizar lista de valoraciones
     ratingModal.style.display = "none";
     resetRating();
+
+    // Guardar la fecha de la última valoración del usuario
+    localStorage.setItem(`lastVoteDate_${currentNick}`, new Date().toLocaleDateString());
 });
 
 // Guardar valoración en localStorage
