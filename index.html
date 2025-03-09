@@ -37,69 +37,28 @@
 
         <!-- Contenido principal -->
         <main>
-            <!-- Sección izquierda: Votación y estadísticas -->
-            <div class="left-column">
-                <!-- Cuadro de votación -->
-                <section class="vote-box">
-                    <h2>Vota por este servidor</h2>
-                    <button id="open-rating-modal">Calificar Servidor</button>
-                </section>
+            <!-- Cuadro de información general -->
+            <section class="info-box">
+                <h2>Información General</h2>
+                <p>LowMc Network es un servidor centrado en modalidades PvP. Entra y haz amigos, o haz que tu clan llegue al top y domine el servidor. ¡Diviértete en un entorno competitivo y emocionante!</p>
+            </section>
 
-                <!-- Cuadro de estadísticas -->
-                <section class="stats-box">
-                    <h2>Estadísticas de Votos</h2>
-                    <div id="vote-stats"></div>
-                </section>
-            </div>
-
-            <!-- Sección derecha: Información y redes sociales -->
-            <div class="right-column">
-                <!-- Cuadro de información general -->
-                <section class="info-box">
-                    <h2>Información General</h2>
-                    <p>LowMc Network es un servidor centrado en modalidades PvP. Entra y haz amigos, o haz que tu clan llegue al top y domine el servidor. ¡Diviértete en un entorno competitivo y emocionante!</p>
-                </section>
-
-                <!-- Cuadro de redes sociales -->
-                <section class="social-box">
-                    <h2>Redes Sociales</h2>
-                    <div class="social-icons">
-                        <a href="https://discord.gg/66X8m3h3" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord" class="social-icon">
-                        </a>
-                        <a href="https://www.tiktok.com/@lownetwork_" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" class="social-icon tiktok-icon">
-                        </a>
-                        <a href="https://lowmc.tebex.io" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Tebex" class="social-icon">
-                        </a>
-                    </div>
-                </section>
-            </div>
+            <!-- Cuadro de redes sociales -->
+            <section class="social-box">
+                <h2>Redes Sociales</h2>
+                <div class="social-icons">
+                    <a href="https://discord.gg/66X8m3h3" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord" class="social-icon">
+                    </a>
+                    <a href="https://www.tiktok.com/@lownetwork_" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" class="social-icon tiktok-icon">
+                    </a>
+                    <a href="https://lowmc.tebex.io" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Tebex" class="social-icon">
+                    </a>
+                </div>
+            </section>
         </main>
-
-        <!-- Botón para ver valoraciones -->
-        <section class="see-more">
-            <button id="see-more-btn">Ver Valoraciones</button>
-            <div id="all-ratings" class="hidden"></div>
-        </section>
-    </div>
-
-    <!-- Modal de calificación -->
-    <div id="rating-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Calificar Servidor</h2>
-            <div class="stars">
-                <span data-value="1">★</span>
-                <span data-value="2">★</span>
-                <span data-value="3">★</span>
-                <span data-value="4">★</span>
-                <span data-value="5">★</span>
-            </div>
-            <textarea id="comment" placeholder="Escribe tu comentario (máximo 200 caracteres)" maxlength="200"></textarea>
-            <button id="submit-rating">Enviar Valoración</button>
-        </div>
     </div>
 
     <script src="script.js"></script>
