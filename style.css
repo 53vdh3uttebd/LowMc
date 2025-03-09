@@ -96,6 +96,14 @@ header {
     cursor: pointer;
 }
 
+/* Mensaje de bienvenida */
+.user-nick-display {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #00a8ff;
+}
+
 /* Columnas principales */
 .left-column, .right-column {
     width: 48%;
